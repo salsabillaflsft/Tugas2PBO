@@ -4,7 +4,6 @@ public class Bola extends Lingkaran {
 
     @Override
     public String Cetak2() {
-
         return "Volume bola : ";
     }
 
@@ -13,14 +12,13 @@ public class Bola extends Lingkaran {
         volume_b = getLuasLingkaran(r)*r*4/3;
     }
     void VolumeBolaKecil(float r, float t) {
+
         vol_bola_kecil = (float) (3.14*(Math.pow(t,2))*((3*r)-t)/3);
     }
     void VolumeTembereng3D() {
         vol_tembereng = (NilaiVolumeBola() - getVolBolaKecil());
     }
     void  LuasPermukaanTembereng3D(float r, float t) {
-        // A = (float) (Math.sqrt(Math.pow(t,2) + Math.pow((R-r),2)));
-        //lp_tembereng = (float) ((3.14*A*(R + r)) + (3.14*(Math.pow(R,2)+Math.pow(r,2))));
     }
 
     public float NilaiVolumeBola() {

@@ -20,11 +20,6 @@ public class Tembereng2D extends Juring2D{
         pbt_tembereng = getSudutSisi(r) * getKelilingLingkaran(r);
     }
 
-    void KelilingTembereng(float r) {
-        keliling_tembereng = (float) (r * getNilaiPanjangBusur(r) );
-    }
-
-    void Keliling_T(float r){keliling_t = (float)(getNilaiPanjangTaliBusur() * getNilaiPanjangBusur(r));}
 
     public float getNilaiPanjangTaliBusur() {
         return pbt_tembereng;
@@ -38,20 +33,8 @@ public class Tembereng2D extends Juring2D{
         return keliling_tembereng;
     }
 
-    public float getKelilingT() {
-        return keliling_t;
-    }
-
     public float getLuasTembereng() {
         return luas_tembereng;
-    }
-
-    public float get_a() {
-        return a;
-    }
-
-    public float get_ti() {
-        return ti;
     }
 
 }

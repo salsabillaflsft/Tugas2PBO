@@ -1,7 +1,5 @@
 public class Juring3D extends Bola {
     float volume_juring, lp_juring;
-    private float h;
-    private float r;
 
     void VolumeJuring(float h) {
         //2/3 phi R 2 h

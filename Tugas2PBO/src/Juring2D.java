@@ -9,14 +9,16 @@ public class Juring2D extends Lingkaran {
         return "Luas juring : ";
     }
 
-
     void nilaiSudut(float sudut) {
-        sudutsisi = sudut/360;
+        if(sudut>=0){
+            sudutsisi = sudut/360;
+        }
+        else{
+            throw new IllegalArgumentException("Besar sudut sisi tidak boleh negatif");
+        }
+
     }
 
-    void panjangBusurJuring(float r) {
-        pb_juring = getSudutSisi(r) * getKelilingLingkaran(r);
-    }
 
     void KelilingJuring(float r) {
         keliling_juring = ( getSudutSisi(r) * getKelilingLingkaran(r) ) + (2 * r);
@@ -41,7 +43,6 @@ public class Juring2D extends Lingkaran {
     }
 
     void KelilingTembereng(float r, float sudut){
-
         if (sudut == 60)
         {
             keliling_tembereng = (float) (r * getNilaiPanjangBusur(r) );
@@ -86,13 +87,5 @@ public class Juring2D extends Lingkaran {
 
     public float getLuasTembereng() {
         return luas_tembereng;
-    }
-
-    public float get_a() {
-        return a;
-    }
-
-    public float get_ti() {
-        return ti;
     }
 }

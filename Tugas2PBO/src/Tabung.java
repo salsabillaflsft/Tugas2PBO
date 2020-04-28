@@ -8,10 +8,12 @@ public class Tabung extends Lingkaran {
     }
 
     void VolumeSilinder(float r,float t) {
+
         volume_s = getLuasLingkaran(r) * t;
     }
 
     public float NilaiVolumeSilinder() {
+
         return volume_s;
     }
 
@@ -20,6 +22,7 @@ public class Tabung extends Lingkaran {
     }
 
     public float NilaiLuasPermukaanSilinder() {
+
         return lp_silinder;
     }
 

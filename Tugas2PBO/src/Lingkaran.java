@@ -6,8 +6,13 @@ public class Lingkaran {
     }
 
     public void NilaiLingkaran(float r){
-        this.r = r;
-        luas_lingkaran = (float) (3.14 * Math.pow(r,2));
+        if(r>=0){
+            this.r = r;
+            luas_lingkaran = (float) (3.14 * Math.pow(r, 2));
+        }
+        else{
+            throw new IllegalArgumentException("Nilai jari dari lingkaran tidak boleh negatif");
+        }
     }
 
     private float HitungKeliling(float r){
