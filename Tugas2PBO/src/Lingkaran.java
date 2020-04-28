@@ -18,6 +18,7 @@ public class Lingkaran {
         return (float) (3.14 * Math.pow(r,2));
     }
 
+
     public float getLuasLingkaran(float r) {
         return HitungLuas(r);
     }

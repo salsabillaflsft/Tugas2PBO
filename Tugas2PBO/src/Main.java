@@ -46,8 +46,6 @@ public class Main {
                     System.out.println("Masukkan sudut sisi : ");
                     set_sudut = input.nextInt();
                     juring.nilaiSudut(set_sudut);
-                   // juring.panjangBusurJuring(set_r);
-                    //System.out.println("Panjang busur juring : " + juring.getNilaiPanjangBusur(set_r));
                     juring.KelilingJuring(set_r);
                     System.out.println("Keliling Juring : " + juring.getKelilingJuring());
                     juring.LuasJuring(set_r);
@@ -70,8 +68,13 @@ public class Main {
                     System.out.println("Luas Tembereng : " + juring.getLuasTembereng());
 
                     System.out.println("===========BUSUR===========");
-                    juring.panjangBusurJuring(set_r);
-                    System.out.println("Panjang Busur  : " + juring.getNilaiPanjangBusur(set_r));
+                    System.out.println("Masukkan ukuran jari-jari : ");
+                    set_r = input.nextInt();
+                    System.out.println("Masukkan sudut sisi : ");
+                    set_sudut = input.nextInt();
+                    busur.nilaiSudut(set_sudut);
+                    busur.panjangBusurJuring(set_r);
+                    System.out.println("Panjang Busur  : " + busur.getPanjangBusurJuring());
                     break;
 
                 case 3:
