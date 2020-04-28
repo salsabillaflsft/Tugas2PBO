@@ -4,22 +4,26 @@ public class Main {
     public static void main(String[] args) {
         char y_t;
         Scanner input = new Scanner(System.in);
-        float set_r, set_ts, set_sudut;
-        int menu;
+        float set_r, set_ts, set_sudut, set_tkecil, set_rkecil, set_a, set_ti, set_tkecil2, set_rkecil2;
+        int menu,menu2;
         Lingkaran lingkaran = new Lingkaran();
         Bola bola = new Bola();
-        Silinder silinder = new Silinder();
+        Tabung silinder = new Tabung();
         Kerucut kerucut = new Kerucut();
+        Busur busur = new Busur();
+        Juring2D juring = new Juring2D();
+        Tembereng2D tembereng = new Tembereng2D();
         KerucutTerpancung kt = new KerucutTerpancung();
-        Juring juring = new Juring();
+        Juring3D juring3D = new Juring3D();
+        Tembereng3D tembereng3D = new Tembereng3D();
 
         do {
             System.out.println("================MENU================");
             System.out.println("1. Lingkaran");
-            System.out.println("2. Juring dan Tembereng");
-            System.out.println("3. Kerucut");
-            System.out.println("4. Silinder");
-            System.out.println("5. Bola");
+            System.out.println("2. Juring2D,Tembereng2D dan Busur");
+            System.out.println("3. Kerucut,Kerucut Terpancung");
+            System.out.println("4. Tabung");
+            System.out.println("5. Bola, Juring3D dan Tembereng3D");
             System.out.println("6. Exit");
             System.out.println("Pilih menu : ");
             menu = input.nextInt();
@@ -34,28 +38,45 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.println("===========JURING DAN TEMBERENG===========");
+                    System.out.println("===========JURING===========");
                     System.out.println("JURING");
+                    System.out.println("Hitung " + juring.Cetak2());
                     System.out.println("Masukkan ukuran jari-jari : ");
                     set_r = input.nextInt();
                     System.out.println("Masukkan sudut sisi : ");
                     set_sudut = input.nextInt();
                     juring.nilaiSudut(set_sudut);
-                    juring.panjangBusurJuring(set_r);
-                    System.out.println("Panjang busur juring : " + juring.getNilaiPanjangBusur());
+                   // juring.panjangBusurJuring(set_r);
+                    //System.out.println("Panjang busur juring : " + juring.getNilaiPanjangBusur(set_r));
                     juring.KelilingJuring(set_r);
                     System.out.println("Keliling Juring : " + juring.getKelilingJuring());
                     juring.LuasJuring(set_r);
                     System.out.println("Luas Juring : " + juring.getLuasJuring());
 
-                    System.out.println();
-
+                    System.out.println("===========TEMBERENG===========");
                     System.out.println("TEMBERENG");
+                    System.out.println("Hitung " + juring.Cetak2());
+                    System.out.println("Masukkan ukuran alas segitiga : ");
+                    set_a = input.nextInt();
+                    System.out.println("Masukkan tinggi segitiga : ");
+                    set_ti = input.nextInt();
+                    juring.LuasSegitiga(set_a, set_ti);
+                    System.out.println("Luas Segitiga : " + juring.getNilaiLuasSegitiga());
+                    juring.PanjangTaliBusur(set_r);
+                    System.out.println("Panjang Tali busur : " + juring.getNilaiPanjangTaliBusur());
+                    juring.KelilingTembereng(set_r, set_sudut);
+                    System.out.println("Keliling Tembereng : " + juring.getKelilingTembereng());
+                    juring.LuasTembereng();
+                    System.out.println("Luas Tembereng : " + juring.getLuasTembereng());
 
+                    System.out.println("===========BUSUR===========");
+                    juring.panjangBusurJuring(set_r);
+                    System.out.println("Panjang Busur  : " + juring.getNilaiPanjangBusur(set_r));
                     break;
 
                 case 3:
                     System.out.println("===========KERUCUT DAN KERUCUT TERPANCUNG===========");
+                    System.out.println("KERUCUT");
                     System.out.println("Hitung " + kerucut.Cetak2());
                     System.out.println("Masukkan ukuran jari-jari : ");
                     set_r = input.nextInt();
@@ -65,16 +86,22 @@ public class Main {
                     System.out.println(kerucut.Cetak2() + kerucut.NilaiVolumeKerucut());
                     kerucut.LuasPermukaanKerucut(set_r, set_ts);
                     System.out.println("Luas Permukaan Kerucut : " + kerucut.NilaiLuasPermukaanKerucut());
+                    System.out.println();
+                    System.out.println("KERUCUT TERPANCUNG");
+                    System.out.println("Masukkan jari-jari atap kerucut : ");
+                    set_rkecil = input.nextInt();
+                    System.out.println("Masukkan tinggi kerucut terpancung : ");
+                    set_tkecil = input.nextInt();
                     System.out.println("Volume Kerucut Terpancung : ");
-                    kt.VolumeKerucutTerpancung(set_r,set_ts);
+                    kt.VolumeKerucutTerpancung(set_r,set_rkecil,set_tkecil);
                     System.out.println(kt.NilaiVolumeKerucutTerpancung());
-                    kt.LuasPermukaanKerucutTerpancung(set_r, set_ts);
+                    kt.LuasPermukaanKerucutTerpancung(set_r, set_rkecil,set_tkecil);
                     System.out.println("Luas Permukaan Kerucut Terpancung : ");
                     System.out.println(kt.NilaiLuasPermukaanKerucutTerpancung());
                     break;
 
                 case 4:
-                    System.out.println("===========SILINDER===========");
+                    System.out.println("===========TABUNG===========");
                     System.out.println("Hitung " + silinder.Cetak2());
                     System.out.println("Masukkan ukuran jari-jari : ");
                     set_r = input.nextInt();
@@ -87,10 +114,33 @@ public class Main {
                     break;
 
                 case 5:
+                    System.out.println("===========BOLA===========");
                     System.out.println("Masukkan ukuran jari-jari : ");
                     set_r = input.nextInt();
                     bola.VolumeBola(set_r);
                     System.out.println("Volume Bola : " + bola.NilaiVolumeBola());
+
+                    System.out.println("===========JURING 3D===========");
+                    System.out.println("Masukkan jari-jari : ");
+                    set_rkecil2 = input.nextInt();
+                    System.out.println("Masukkan tinggi  : ");
+                    set_tkecil2 = input.nextInt();
+                    juring3D.VolumeJuring(set_rkecil2);
+                    System.out.println("Volume Juring 3D : "+juring3D.NilaiVolumeJuring());
+                    juring3D.LuasPermukaanJuring(set_rkecil2,set_tkecil2);
+                    System.out.println("Luas Permukaan Juring 3D: ");
+                    System.out.println(juring3D.NilaiLuasPermukaanJuring());
+
+                    System.out.println(tembereng3D.NilaiLuasPermukaanTembereng3D());
+                    System.out.println("===========TEMBERENG 3D===========");
+                    System.out.println("Masukkan tinggi tembereng kecil : ");
+                    set_tkecil2 = input.nextInt();
+                    bola.VolumeBolaKecil(set_r, set_tkecil2);
+                    bola.VolumeTembereng3D();
+                    System.out.println("Volume Tembereng 3D : "+bola.NilaiVolumeTembereng3D());
+                    tembereng3D.LuasPermukaanTembereng3D(set_r,set_tkecil2);
+                    System.out.println("Luas Permukaan Tembereng 3D: ");
+                    System.out.println(tembereng3D.NilaiLuasPermukaanTembereng3D());
                     break;
 
                 default:
